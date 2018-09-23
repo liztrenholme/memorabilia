@@ -17,9 +17,8 @@ class Featured extends Component {
 
   render() {
     return (
-      <div className="row">
-        <div id="featured-items">
-          <h3>Featured Items</h3>
+      <div>
+        <table>
           <tbody>
             <tr>
               {this.state.hi.map(hi =>
@@ -27,8 +26,9 @@ class Featured extends Component {
               )}
             </tr>
           </tbody>
-        </div>
+        </table>
       </div>
+
     );
   }
 }

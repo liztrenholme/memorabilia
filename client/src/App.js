@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Customers from './components/customers';
+// import Customers from './components/customers';
 import Featured from './components/featured';
+// import Search from './components/search';
 import Logo from './images/logo.jpg';
 import Tumblr from "./images/tumblr.png";
 import Twitter from "./images/twitter-48.png";
@@ -9,12 +10,31 @@ import Blogger from "./images/blogger-5-48.png";
 import HeaderImg from "./images/header.jpg";
 
 class App extends Component {
+    constructor() {
+        super();
+        this.state = {
+            value: '',
+            results: []
+        }
+    }
+    onChange(e) {
+        this.setState({ value: e.target.value });
+        console.log(this.state.value);
+    }
+
+    // onChange({ target: { value } }) {
+    //     const { index, lines } = this.state;
+
+    //     // Set captured value to input
+    //     this.setState(() => ({ value }));
+    // }    
     render() {
+        const { results, value } = this.state;
         return (
             <div className="App">
                 <div className="container-fluid">
                     <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-                        <a className="navbar-brand" href="/"><img src={Logo} width="80px" /></a>
+                        <a className="navbar-brand" href="/"><img src={Logo} alt="logo" width="80px" /></a>
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
@@ -23,9 +43,21 @@ class App extends Component {
                                 <li className="nav-item active">
                                     <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
                                 </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="http://kollectingkiss.tumblr.com/"><img src={Tumblr} alt="tumblr" width="24px" height="24px" /></a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="http://twitter.com/KollectingKiss"><img src={Twitter} alt="twitter" width="24px" height="24px" /></a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href=" http://kollectingkiss.blogspot.com/"><img src={Blogger} className="blogger-pic" alt="blogspot" width="24px" height="24px" /></a>
+                                </li>
                                 <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle scrollable-menu" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
-                                    <div className="dropdown-menu pre-scrollable" aria-labelledby="navbarDropdown">
+                                    <a className="nav-link dropdown-toggle scrollable-menu"
+                                        id="navbarDropdown" role="button" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">Categories</a>
+                                    <div className="dropdown-menu pre-scrollable"
+                                        aria-labelledby="navbarDropdown">
                                         <a className="dropdown-item" href="action_figures">Action Figures / Dolls</a>
                                         <a className="dropdown-item" href="advertising_ads">Advertising Ads</a>
                                         <a className="dropdown-item" href="artwork_busts">Artwork / Busts</a>
@@ -68,26 +100,25 @@ class App extends Component {
                                         <a className="dropdown-item" href="lighters">Zippos / Lighters</a>
                                     </div>
                                 </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="http://kollectingkiss.tumblr.com/"><img src={Tumblr} width="24px" height="24px" /></a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="http://twitter.com/KollectingKiss"><img src={Twitter} width="24px" height="24px" /></a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href=" http://kollectingkiss.blogspot.com/"><img src={Blogger} width="24px" height="24px" /></a>
-                                </li>
                             </ul>
+                            {/* <Search /> */}
                             <form className="form-inline my-2 my-lg-0">
-                                <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                                <button className="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+                                <input className="form-control mr-sm-2"
+                                    type="text" 
+                                    onChange={e => this.onChange(e)}
+                                    placeholder="Search"
+                                    aria-label="Search" />
+                                <button className="btn btn-outline-secondary my-2 my-sm-0"
+                                    href={value}
+                                    hi={console.log(value.trim())}
+                                    type="submit">Search</button>
                             </form>
                         </div>
                     </nav>
                     <div className="container">
                         <div className="row">
                             <div className="col-md-12">
-                                <img id="header" src={HeaderImg} />
+                                <img id="header" src={HeaderImg} alt="header" />
                             </div>
                         </div>
                         <div className="row">
@@ -105,7 +136,12 @@ class App extends Component {
                                 </div>
                                 <div className="col-md-1">
                                 </div>
-                                <Featured />
+                                <div className="row">
+                                    <div id="featured-items">
+                                        <h3>Featured Items</h3>
+                                        <Featured />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

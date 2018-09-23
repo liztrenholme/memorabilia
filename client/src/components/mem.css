@@ -11,6 +11,12 @@ li{
   border-bottom: 1px dotted #777;
 }
 
+.blogger-pic {
+	background-color: #777;
+	border-radius: 20px;
+	border: 1px #777 solid;
+}
+
 body {
 	background-color: black;
 }
@@ -32,6 +38,7 @@ a {
 }
 
 a:hover {
+	opacity: .7;
 	text-decoration: none;
 	color: #ffffff;
 }
