@@ -14,9 +14,9 @@ app.get('/api/customers', (req, res) => {
 
 app.get('/api/hi', (req, res) => {
   const hi = [
-    {id: 1, greeting: 'hello'},
-    {id: 2, greeting: 'howdy'},
-    {id: 3, greeting: 'hola'},
+    {id: 1, greeting: 'item 1'},
+    {id: 2, greeting: 'item 2'},
+    {id: 3, greeting: 'item 3'},
   ];
 
   res.json(hi);
