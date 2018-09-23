@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './mem.css';
 
-class Hi extends Component {
+class Featured extends Component {
   constructor() {
     super();
     this.state = {
@@ -17,16 +17,20 @@ class Hi extends Component {
 
   render() {
     return (
-      <div>
-        <h2>So many ways to say hi!</h2>
-        <ul>
+        <div className="row">
+        <div id="featured-items">
+            <h3>Featured Items</h3>
+            <table>
+                <tr>
         {this.state.hi.map(hi => 
-          <li key={hi.id}>{hi.greeting}</li>
+          <td key={hi.id}>{hi.greeting}</td>
         )}
-        </ul>
-      </div>
+        </tr>
+            </table>
+        </div>
+    </div>
     );
   }
 }
 
-export default Hi;
+export default Featured;
