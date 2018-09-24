@@ -21,7 +21,7 @@ body {
 	background-color: black;
 }
 
-#header {
+.header {
 	margin: 65px 0 40px 0;
 	width: 100%;
 }
@@ -52,7 +52,7 @@ a:hover {
 	width: 80%;
 }
 
-#main, #featured-items {
+.main-blurb, .featured-items {
 	margin: 10px 0;
 	width: 100%;
 	background-color: #ffffff;

@@ -17,13 +17,17 @@ class Customers extends Component {
 
   render() {
     return (
-      <div>
+      <div className="animals">
         <h2>Animals</h2>
-        <ul>
+        <table>
+          <tbody>
+            <tr>
         {this.state.animals.map(animal => 
-          <li key={animal.id}>{animal.name} {animal.color}</li>
+          <td key={animal._id}>{animal.name} {animal.color}</td>
         )}
-        </ul>
+        </tr>
+          </tbody>
+        </table>
       </div>
     );
   }
