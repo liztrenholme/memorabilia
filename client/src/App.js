@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-// import Customers from './components/customers';
+import Customers from './components/customers';
 import Featured from './components/featured';
 // import Search from './components/search';
 import Logo from './images/logo.jpg';
@@ -109,9 +109,9 @@ class App extends Component {
                                     placeholder="Search"
                                     aria-label="Search" />
                                 <button className="btn btn-outline-secondary my-2 my-sm-0"
-                                    href={value}
-                                    hi={console.log(value.trim())}
-                                    type="submit">Search</button>
+                                    // href={value.trim().toString(this)}
+                                    // hi={console.log(value.trim().toString())}
+                                    type="submit"><a href={value.trim().toString(this)} >Search</a></button>
                             </form>
                         </div>
                     </nav>
@@ -140,6 +140,7 @@ class App extends Component {
                                     <div id="featured-items">
                                         <h3>Featured Items</h3>
                                         <Featured />
+                                        <Customers />
                                     </div>
                                 </div>
                             </div>
