@@ -11,6 +11,19 @@ app.use(express.static("public"));
 var databaseUrl = "zoo";
 var collections = ["animals"];
 
+
+// ***** MongoDB Atlas connection *****
+var MongoClient = require('mongodb').MongoClient;
+
+var uri = "mongodb+srv://test-admin:n3w2this@flustered-and-clustered-sfvp7.mongodb.net/test?retryWrites=true";
+MongoClient.connect(uri, function(err, client) {
+   const collection = client.db("test").collection("devices");
+   // perform actions on the collection object
+   client.close();
+});
+
+// ************************************
+
 // Use mongojs to hook the database to the db variable
 var db = mongojs(databaseUrl, collections);
 
