@@ -8,6 +8,7 @@ import Tumblr from "./images/tumblr.png";
 import Twitter from "./images/twitter-48.png";
 import Blogger from "./images/blogger-5-48.png";
 import HeaderImg from "./images/header.jpg";
+import Contact from './components/contact';
 
 class App extends Component {
     constructor() {
@@ -108,10 +109,11 @@ class App extends Component {
                                     onChange={e => this.onChange(e)}
                                     placeholder="Search"
                                     aria-label="Search" />
+                                <a href={value.trim().toString(this)} >  
                                 <button className="btn btn-outline-secondary my-2 my-sm-0"
                                     // href={value.trim().toString(this)}
                                     // hi={console.log(value.trim().toString())}
-                                    type="submit"><a href={value.trim().toString(this)} >Search</a></button>
+                                    type="submit">Search</button></a>
                             </form>
                         </div>
                     </nav>
@@ -141,6 +143,7 @@ class App extends Component {
                                         <h3>Featured Items</h3>
                                         <Featured />
                                         <Customers />
+                                        <Contact />
                                     </div>
                                 </div>
                             </div>

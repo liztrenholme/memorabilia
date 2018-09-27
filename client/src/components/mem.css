@@ -6,7 +6,6 @@ ul {
   padding:0;
   list-style:none;
   width: 50%;
-  /* margin:auto; */
 }
 
 li{
@@ -78,3 +77,21 @@ footer {
 	text-align: center;
 	color: #fff;
 }
+
+textarea {
+	/* margin: 0 0 0 10px; */
+	border: 1px solid #f2f2f2;
+	border-radius: 10px;
+  }
+  
+  .select {
+	width: 10%;
+	margin: 0 -10 0 10%;
+  }
+  
+  .text-input, label {
+	/* text-align: left; */
+	width: 90%;
+	border: 1px solid #f2f2f2;
+	border-radius: 10px;
+  }
