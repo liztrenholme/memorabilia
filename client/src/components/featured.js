@@ -34,7 +34,8 @@ class Featured extends Component {
             <div className="col-md-1">
             </div>
           </div>
-          <div>
+          <div className="featured-items">
+            <h3>Featured Items</h3>
             <table>
               <tbody>
                 <tr>

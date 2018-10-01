@@ -42,7 +42,7 @@ class App extends Component {
                                 <li className="nav-item">
                                     <a className="nav-link" href=" http://kollectingkiss.blogspot.com/"><img src={Blogger} className="blogger-pic" alt="blogspot" width="24px" height="24px" /></a>
                                 </li>
-                                <li className="nav-item dropdown">
+                                <li className="nav-item active dropdown">
                                     <a className="nav-link dropdown-toggle scrollable-menu"
                                         id="navbarDropdown" role="button" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">Categories</a>
@@ -92,7 +92,7 @@ class App extends Component {
                                         <a className="dropdown-item" href="lighters">Zippos / Lighters</a>
                                     </div>
                                 </li>
-                                <li className="nav-item">
+                                <li className="nav-item active">
                                     <a className="nav-link" href="/contact">Contact</a>
                                 </li>
                             </ul>
@@ -117,14 +117,13 @@ class App extends Component {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="row">
-                                <div className="featured-items">
+                                <div className="routes-rendered-here">
                                     <Routes />
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </div>
+                <footer>&#9400; 2007-2018 Kollecting KISS | All rights reserved.</footer>
             </div>
         );
     }

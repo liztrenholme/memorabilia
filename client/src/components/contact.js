@@ -5,12 +5,10 @@ class Contact extends Component {
   render() {
     return (
       <div className="Contact">
-        <div className="contactform">
-          <div className="container">
             <div className="row">
               <div className="col-md-3">
               </div>
-              <div className="col-md-6">
+              <div className="col-md-6 contactform">
               <h3 className="title">Ask a question</h3>
                 <p className="hear">Send us a general question or comment here.</p>
                 <form action="https://formspree.io/liztrenholme@gmail.com" method="POST">
@@ -28,8 +26,6 @@ class Contact extends Component {
               </div>
             </div>
           </div>
-        </div>
-      </div>
     );
   }
 }
