@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+// import { render } from 'react-dom';
+// import { Router, Route, browserHistory } from 'react-router';
 import Customers from './components/customers';
 import Featured from './components/featured';
 // import Search from './components/search';
@@ -9,6 +12,7 @@ import Twitter from "./images/twitter-48.png";
 import Blogger from "./images/blogger-5-48.png";
 import HeaderImg from "./images/header.jpg";
 import Contact from './components/contact';
+import Hi from './components/hi';
 
 class App extends Component {
     constructor() {
@@ -33,6 +37,12 @@ class App extends Component {
         const { results, value } = this.state;
         return (
             <div className="App">
+                <BrowserRouter>
+                    <Switch>
+                        <Route path="/hi" exact component={Hi} />
+                        <Route path="/contact" exact component={Contact} />
+                    </Switch>
+                </BrowserRouter>
                 <div className="container-fluid">
                     <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
                         <a className="navbar-brand" href="/"><img src={Logo} alt="logo" width="80px" /></a>
@@ -105,15 +115,15 @@ class App extends Component {
                             {/* <Search /> */}
                             <form className="form-inline my-2 my-lg-0">
                                 <input className="form-control mr-sm-2"
-                                    type="text" 
+                                    type="text"
                                     onChange={e => this.onChange(e)}
                                     placeholder="Search"
                                     aria-label="Search" />
-                                <a href={value.trim().toString(this)} >  
-                                <button className="btn btn-outline-secondary my-2 my-sm-0"
-                                    // href={value.trim().toString(this)}
-                                    // hi={console.log(value.trim().toString())}
-                                    type="submit">Search</button></a>
+                                <a href={value.trim().toString(this)} >
+                                    <button className="btn btn-outline-secondary my-2 my-sm-0"
+                                        // href={value.trim().toString(this)}
+                                        // hi={console.log(value.trim().toString())}
+                                        type="submit">Search</button></a>
                             </form>
                         </div>
                     </nav>
@@ -142,8 +152,8 @@ class App extends Component {
                                     <div className="featured-items">
                                         <h3>Featured Items</h3>
                                         <Featured />
-                                        <Customers />
-                                        <Contact />
+                                        {/* <Customers /> */}
+                                        {/* <Contact /> */}
                                     </div>
                                 </div>
                             </div>
