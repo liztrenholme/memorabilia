@@ -1,19 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-// import { render } from 'react-dom';
-// import { Router, Route, browserHistory } from 'react-router';
-import Customers from './components/customers';
-import Featured from './components/featured';
-// import Search from './components/search';
 import Logo from './images/logo.jpg';
 import Tumblr from "./images/tumblr.png";
 import Twitter from "./images/twitter-48.png";
 import Blogger from "./images/blogger-5-48.png";
 import HeaderImg from "./images/header.jpg";
-import Contact from './components/contact';
-import Hi from './components/hi';
-
+import Routes from './routes';
 class App extends Component {
     constructor() {
         super();
@@ -26,23 +18,10 @@ class App extends Component {
         this.setState({ value: e.target.value });
         console.log(this.state.value);
     }
-
-    // onChange({ target: { value } }) {
-    //     const { index, lines } = this.state;
-
-    //     // Set captured value to input
-    //     this.setState(() => ({ value }));
-    // }    
     render() {
         const { results, value } = this.state;
         return (
             <div className="App">
-                <BrowserRouter>
-                    <Switch>
-                        <Route path="/hi" exact component={Hi} />
-                        <Route path="/contact" exact component={Contact} />
-                    </Switch>
-                </BrowserRouter>
                 <div className="container-fluid">
                     <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
                         <a className="navbar-brand" href="/"><img src={Logo} alt="logo" width="80px" /></a>
@@ -69,6 +48,8 @@ class App extends Component {
                                         aria-haspopup="true" aria-expanded="false">Categories</a>
                                     <div className="dropdown-menu pre-scrollable"
                                         aria-labelledby="navbarDropdown">
+                                        <a className="dropdown-item" href="customers">customers</a>
+                                        <a className="dropdown-item" href="hi">hi</a>
                                         <a className="dropdown-item" href="action_figures">Action Figures / Dolls</a>
                                         <a className="dropdown-item" href="advertising_ads">Advertising Ads</a>
                                         <a className="dropdown-item" href="artwork_busts">Artwork / Busts</a>
@@ -111,8 +92,10 @@ class App extends Component {
                                         <a className="dropdown-item" href="lighters">Zippos / Lighters</a>
                                     </div>
                                 </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="/contact">Contact</a>
+                                </li>
                             </ul>
-                            {/* <Search /> */}
                             <form className="form-inline my-2 my-lg-0">
                                 <input className="form-control mr-sm-2"
                                     type="text"
@@ -134,27 +117,9 @@ class App extends Component {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-md-1">
-                            </div>
-                            <div className="col-md-10">
-                                <div className="row">
-                                    <div className="main-blurb">
-                                        <h4>Kollecting KISS is your ultimate resource guide for collecting KISS memorabilia since June 2007.</h4>
-                                        <p className="disclaimer">(Please note we are NOT a retail site. We are for informational purposes only!)</p>
-                                        <p>Have you ever seen an item and wondered, "Where did that come from, and is it a fake or a licensed item?" That's where www.KollectingKISS.com comes in. We are building a database that will be made by you, the fans. Let's face it, Gene Simmons has been a monster in the marketing of the KISS brand the world over. There are always new merchandising ideas coming down the pipeline in the KISS community and if you are a collector, you want to know about them. We will strive to give you as much information as possible to let the die hard KISS collector know manufacturing data, prototype ideas, variants in products and much, much more. We welcome your ideas and submissions of cool and rare stuff from your collection. Email us and find out how to submit your pictures and information. Finally, collecting should be fun! Your latest rare find should be as exciting as your very first.</p>
-                                        <p>We hope our resource guide will help you recognize official merchandise from knock offs and unauthorized memorabilia and help you recognize some of the the real gems in your collection.</p>
-                                        <p>Searching for a particular item? Want to see what came out in 2010? Simply use our search feature at the top of the page and type in the item or year you want to see.</p>
-                                    </div>
-                                </div>
-                                <div className="col-md-1">
-                                </div>
-                                <div className="row">
-                                    <div className="featured-items">
-                                        <h3>Featured Items</h3>
-                                        <Featured />
-                                        {/* <Customers /> */}
-                                        {/* <Contact /> */}
-                                    </div>
+                            <div className="row">
+                                <div className="featured-items">
+                                    <Routes />
                                 </div>
                             </div>
                         </div>
