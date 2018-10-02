@@ -117,9 +117,9 @@ class App extends Component {
                             </div>
                         </div>
                         <div className="row">
-                                <div className="routes-rendered-here">
-                                    <Routes />
-                                </div>
+                            <div className="routes-rendered-here">
+                                <Routes />
+                            </div>
                         </div>
                     </div>
                 </div>
