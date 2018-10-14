@@ -105,6 +105,51 @@ app.get('/api/hi', (req, res) => {
   res.json(hi);
 });
 
+
+// ********************************************************************
+// this is probably shit.
+// ********************************************************************
+
+// const passport = require('passport')
+//   , LocalStrategy = require('passport-local').Strategy;
+
+//   app.post('/login',
+//   passport.authenticate('local', {
+//       successRedirect: '/',
+//       failureRedirect: '/login',
+//       failureFlash: true
+//   })
+// );
+
+//   app.configure(function() {
+//     app.use(express.static('public'));
+//     app.use(express.cookieParser());
+//     app.use(express.bodyParser());
+//     app.use(express.session({ secret: 'keyboard cat' }));
+//     app.use(passport.initialize());
+//     app.use(passport.session());
+//     app.use(app.router);
+//   });
+
+// passport.use(new LocalStrategy(
+//   function(username, password, done) {
+//     User.findOne({ username: username }, function (err, user) {
+//       if (err) { return done(err); }
+//       if (!user) {
+//         return done(null, false, { message: 'Incorrect username.' });
+//       }
+//       if (!user.validPassword(password)) {
+//         return done(null, false, { message: 'Incorrect password.' });
+//       }
+//       return done(null, user);
+//     });
+//   }
+// ));
+
+// ********************************************************************
+// ********************************************************************
+
+
 const PORT = process.env.PORT || 5000;
 
 
