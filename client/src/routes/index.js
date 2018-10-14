@@ -5,6 +5,7 @@ import Contact from '../components/contact';
 import Featured from '../components/featured';
 import Customers from '../components/customers';
 import Search from '../components/search';
+import Admin from '../components/admin';
 
 export default () => (
     <BrowserRouter>
@@ -14,6 +15,7 @@ export default () => (
             <Route path="/" exact component={Featured} />
             <Route path="/customers" exact component={Customers} />
             <Route path="?" component={Search} />
+            <Route path="/admin" component={Admin} />
         </Switch>
     </BrowserRouter>
 );

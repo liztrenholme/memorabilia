@@ -55,7 +55,7 @@ a:hover {
 	width: 80%;
 }
 
-.main-blurb, .featured-items, .contactform {
+.main-blurb, .featured-items, .contactform, .adminform {
 	margin: 10px 0;
 	width: 100%;
 	background-color: #ffffff;
