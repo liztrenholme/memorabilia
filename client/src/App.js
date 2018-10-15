@@ -123,7 +123,8 @@ class App extends Component {
                         </div>
                     </div>
                 </div>
-                <footer>&#9400; 2007-2018 Kollecting KISS | All rights reserved.</footer>
+                <footer>&#9400; 2007-2018 Kollecting KISS | All rights reserved.</footer>   
+                <footer><a className="light" href="/admin">[Admin]</a></footer>
             </div>
         );
     }

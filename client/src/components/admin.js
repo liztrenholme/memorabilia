@@ -1,8 +1,34 @@
 import React, { Component } from 'react';
 import '../App.css';
+import axios from "axios";
 
 
 class Admin extends Component {
+    constructor(props) {
+        super(props);
+        // this.state = {
+        //   books: []
+        // };
+      }
+    
+      componentDidMount() {
+        axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
+        axios.get('/api/book')
+          .then(res => {
+            // this.setState({ books: res.data });
+            console.log(this.state.books);
+          })
+          .catch((error) => {
+            if(error.response.status === 401) {
+              this.props.history.push("/login");
+            }
+          });
+      }
+    
+      logout = () => {
+        localStorage.removeItem('jwtToken');
+        window.location.reload();
+      }
     render() {
         return (
             <div className="Admin">
@@ -17,6 +43,11 @@ class Admin extends Component {
                             <textarea className="text-input" required rows="10" cols="25" name="description" placeholder="Description" width="50%" height="50%"></textarea>
                             <input type="submit" className='btn btn-outline-secondary' value="Send" />
                         </form>
+                        <div className="logout-button">
+                        {localStorage.getItem('jwtToken') &&
+                  <button class="btn btn-primary" onClick={this.logout}>Logout</button>
+                }
+                </div>
                     </div>
                 </div>
             </div>
@@ -25,3 +56,4 @@ class Admin extends Component {
 }
 
 export default Admin;
+  
