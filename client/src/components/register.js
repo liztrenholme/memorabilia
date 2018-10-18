@@ -36,10 +36,14 @@ class Create extends Component {
         <form className="authform" onSubmit={this.onSubmit}>
           <h2 className="form-signin-heading">Register</h2>
           <label htmlFor="inputEmail" className="sr-only">Email address</label>
-          <input type="email" className="form-control" placeholder="Email address" name="username" value={username} onChange={this.onChange} required/>
+          <input type="email" className="form-control" 
+          placeholder="Email address" name="username" value={username} 
+          onChange={this.onChange} required/>
           <label htmlFor="inputPassword" className="sr-only">Password</label>
-          <input type="password" className="form-control" placeholder="Password" name="password" value={password} onChange={this.onChange} required/>
-          <button className="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+          <input type="password" className="form-control" 
+          placeholder="Password" name="password" value={password} 
+          onChange={this.onChange} required/>
+          <button className="btn btn-outline-secondary" type="submit">Register</button>
         </form>
       </div>
     );

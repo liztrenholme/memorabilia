@@ -19,8 +19,8 @@ export default () => (
                 <Route path="/" exact component={Featured} />
                 <Route path="/customers" exact component={Customers} />
                 <Route path="?" component={Search} />
-                <Route path="/admin" component={Login} />
-                {/* <Route path='/login' component={Login} /> */}
+                <Route path="/admin" component={Admin} />
+                <Route path='/login' component={Login} />
                 <Route path='/register' component={Register} />
             </Switch>
         </BrowserRouter>

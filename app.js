@@ -1,43 +1,74 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var bodyParser = require('body-parser');
-
-var book = require('./routes/book');
-var auth = require('./routes/auth');
+/**
+*Module dependencies
+*/
+var
+  express = require('express'),
+  logger = require('morgan'),
+  path = require('path'),
+  bParser = require('body-parser'),
+  session = require('express-session'),
+  mongoose = require('mongoose'),
+  mongodbStore = require('connect-mongo')(session);
+//==============================================================================
+/**
+*Create app instance
+*/
 var app = express();
+//==============================================================================
+/**
+*Module Variables
+*/
+var
+  config = require('./config/config'),
+  port = process.env.PORT || 5000,
+  env = config.env,
+  router = require('./routes/routes'),
+  dbURL = config.dbURL;
+  app.locals.errMsg = app.locals.errMsg || null;
+//==============================================================================
+/**
+*Module Settings and Config
+*/
+app.set('port', port);
+app.set('env', env);
+// app.set('views', __dirname + '/views');
+// app.set('view engine', 'ejs');
 
-var mongoose = require('mongoose');
-mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://localhost/mern-secure', { promiseLibrary: require('bluebird') })
-  .then(() =>  console.log('connection succesful'))
-  .catch((err) => console.error(err));
-
+mongoose.connect(dbURL);
+var db = mongoose.connection;
+db.on('error', function (err) {
+  console.error('There was a db connection error');
+  return  console.error(err.message);
+});
+db.once('connected', function () {
+  return console.log('Successfully connected to ' + dbURL);
+});
+db.once('disconnected', function () {
+  return console.error('Successfully disconnected from ' + dbURL);
+});
+//==============================================================================
+/**
+*Middleware
+*/
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({'extended':'false'}));
-app.use(express.static(path.join(__dirname, 'build')));
 
-app.use('/api/book', book);
-app.use('/api/auth', auth);
+app.use(bParser.json());
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
+app.use(bParser.urlencoded({ extended: true }));
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
-
+app.use(session({
+  name: 'xpressBlu.sess', store: new mongodbStore({
+    mongooseConnection: mongoose.connection,
+  touchAfter: 24 * 3600}), secret: 'qwertyuiop123456789', resave: false,
+  saveUninitialized: false, cookie: {maxAge: 1000 * 60 * 15}}));
+//==============================================================================
+/**
+*Routes
+*/
+app.use('/', router);
+//==============================================================================
+/**
+*Export Module
+*/
 module.exports = app;
+//==============================================================================
