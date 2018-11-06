@@ -10,7 +10,7 @@ class Featured extends Component {
   }
 
   componentDidMount() {
-    fetch('/api/hi')
+    fetch('/color')
       .then(res => res.json())
       .then(hi => this.setState({ hi }, () => console.log('Hellos fetched...', hi)));
   }

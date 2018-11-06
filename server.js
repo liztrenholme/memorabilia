@@ -8,8 +8,8 @@ app.use(express.static("public"));
 
 // Database configuration
 // Save the URL of our database as well as the name of our collection
-var databaseUrl = "zoo";
-var collections = ["animals"];
+// var databaseUrl = "zoo";
+// var collections = ["animals"];
 
 
 // ***** MongoDB Atlas connection *****
@@ -25,7 +25,7 @@ MongoClient.connect(uri, function(err, client) {
 // ************************************
 
 // Use mongojs to hook the database to the db variable
-var db = mongojs(databaseUrl, collections);
+var db = mongojs(uri, collection);
 
 // This makes sure that any errors are logged if mongodb runs into an issue
 db.on("error", function(error) {
