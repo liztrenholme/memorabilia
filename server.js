@@ -25,8 +25,9 @@ MongoClient.connect(uri, function(err, client) {
 // ************************************
 
 // Use mongojs to hook the database to the db variable
-var db = mongojs(uri, collection);
+// var db = mongojs(uri, collections);
 
+var db = uri;
 // This makes sure that any errors are logged if mongodb runs into an issue
 db.on("error", function(error) {
   console.log("Database Error:", error);
