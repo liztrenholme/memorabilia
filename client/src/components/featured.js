@@ -9,11 +9,11 @@ class Featured extends Component {
     };
   }
 
-  componentDidMount() {
-    fetch('/color')
-      .then(res => res.json())
-      .then(hi => this.setState({ hi }, () => console.log('Hellos fetched...', hi)));
-  }
+  // componentDidMount() {
+  //   fetch('/color')
+  //     .then(res => res.json())
+  //     .then(hi => this.setState({ hi }, () => console.log('Hellos fetched...', hi)));
+  // }
 
   render() {
     return (
