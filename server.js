@@ -15,7 +15,7 @@ app.use(express.static("public"));
 // ***** MongoDB Atlas connection *****
 var MongoClient = require('mongodb').MongoClient;
 
-var uri = "mongodb+srv://test-admin:n3w2this@flustered-and-clustered-sfvp7.mongodb.net/test?retryWrites=true";
+var uri = process.env.MONGO_URI;
 MongoClient.connect(uri, function(err, client) {
    const collection = client.db("test").collection("devices");
    // perform actions on the collection object
