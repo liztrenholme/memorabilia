@@ -1,9 +1,7 @@
 var mongoose = require('mongoose');
-//==============================================================================
-/**
-*Create User Schema
-*/
-var ItemSchema = mongoose.Schema({
+
+// Create User Schema
+var itemSchema = mongoose.Schema({
   item_name: {
     type: String,
     required: true
@@ -25,24 +23,8 @@ var ItemSchema = mongoose.Schema({
     default: Date.now
   }
 });
-//==============================================================================
-/**
-*Schema methods
-*/
-// UserSchema.methods.generateHash = function(password) {
-//     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
-// };
 
-// UserSchema.methods.validPassword = function(password) {
-//     return bcrypt.compareSync(password, this.password);
-// };
-//==============================================================================
-/**
-*Create User Model
-*/
-var ItemModel = mongoose.model('Item', ItemSchema);
-//==============================================================================
-/**
-*Export Module
-*/
-module.exports = ItemModel;
+// Create User Model
+var Item = mongoose.model('Item', itemSchema);
+
+module.exports = Item;

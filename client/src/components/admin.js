@@ -37,7 +37,7 @@ class Admin extends Component {
                     </div>
                     <div className="col-md-10 adminform">
                         <h3 className="title">Enter new item</h3>
-                        <form action="https://formspree.io/liztrenholme@gmail.com" method="POST">
+                        <form action="/submit" method="POST">
                             <input className="text-input" placeholder="Item Name" required type="text"
                                 name="item_name" />
                             <input className="text-input" placeholder="Manufacturer" required type="text"
