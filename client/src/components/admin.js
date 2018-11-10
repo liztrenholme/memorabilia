@@ -47,7 +47,7 @@ class Admin extends Component {
                                 name="description" placeholder="Description" width="50%" height="50%"></textarea>
                             <input className="text-input" placeholder="Estimated value" required type="text"
                                 name="item_value" />
-                            <select>
+                            <select name="category">
                                     <option value="customers">customers</option>
                                     <option value="hi">hi</option>
                                     <option value="action_figures">Action Figures / Dolls</option>
