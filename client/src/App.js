@@ -50,17 +50,17 @@ class App extends Component {
                                         aria-labelledby="navbarDropdown">
                                         <a className="dropdown-item" href="customers">customers</a>
                                         <a className="dropdown-item" href="hi">hi</a>
-                                        <a className="dropdown-item" href="action_figures">Action Figures / Dolls</a>
-                                        <a className="dropdown-item" href="advertising_ads">Advertising Ads</a>
-                                        <a className="dropdown-item" href="artwork_busts">Artwork / Busts</a>
-                                        <a className="dropdown-item" href="backstage_passes">Backstage Passes</a>
+                                        <a className="dropdown-item" href="actionFigures">Action Figures / Dolls</a>
+                                        <a className="dropdown-item" href="advertisingAds">Advertising Ads</a>
+                                        <a className="dropdown-item" href="artworkBusts">Artwork / Busts</a>
+                                        <a className="dropdown-item" href="backstagePasses">Backstage Passes</a>
                                         <a className="dropdown-item" href="bags">Bags / Backpacks / Wallets</a>
-                                        <a className="dropdown-item" href="belt_buckles">Belt Buckles</a>
+                                        <a className="dropdown-item" href="beltBuckles">Belt Buckles</a>
                                         <a className="dropdown-item" href="blankets">Blankets / Rugs / Towels</a>
                                         <a className="dropdown-item" href="books">Books</a>
                                         <a className="dropdown-item" href="buttons">Buttons / Lapel Pins</a>
                                         <a className="dropdown-item" href="calendars">Calendars</a>
-                                        <a className="dropdown-item" href="auto_accessories">Car Automobile Accessories</a>
+                                        <a className="dropdown-item" href="autoAccessories">Car Automobile Accessories</a>
                                         <a className="dropdown-item" href="cars">Cars / Die Cast</a>
                                         <a className="dropdown-item" href="clocks">Clocks / Watches</a>
                                         <a className="dropdown-item" href="clothing">Clothing</a>
@@ -69,25 +69,25 @@ class App extends Component {
                                         <a className="dropdown-item" href="electronics">Electronics / Gaming Gear</a>
                                         <a className="dropdown-item" href="games">Games / Puzzles</a>
                                         <a className="dropdown-item" href="glassware">Glassware</a>
-                                        <a className="dropdown-item" href="guitar_drum">Guitar Picks & Drum Sticks</a>
+                                        <a className="dropdown-item" href="guitarDrum">Guitar Picks & Drum Sticks</a>
                                         <a className="dropdown-item" href="halloween">Halloween Products</a>
                                         <a className="dropdown-item" href="health">Health & Beauty</a>
-                                        <a className="dropdown-item" href="home_decor">Home Decor</a>
-                                        <a className="dropdown-item" href="incense_candles">Incense / Candles</a>
+                                        <a className="dropdown-item" href="homeDecor">Home Decor</a>
+                                        <a className="dropdown-item" href="incenseCandles">Incense / Candles</a>
                                         <a className="dropdown-item" href="jewelry">Jewelry</a>
                                         <a className="dropdown-item" href="keychains">Keychains</a>
-                                        <a className="dropdown-item" href="lunch_boxes">Lunch Boxes</a>
+                                        <a className="dropdown-item" href="lunchBoxes">Lunch Boxes</a>
                                         <a className="dropdown-item" href="magazines">Magazines</a>
                                         <a className="dropdown-item" href="magnets">Magnet / Magnet Sets</a>
                                         <a className="dropdown-item" href="misc">Miscellaneous</a>
                                         <a className="dropdown-item" href="ornaments">Ornaments</a>
-                                        <a className="dropdown-item" href="pet_supplies">Pet Supplies & Accessories</a>
+                                        <a className="dropdown-item" href="petSupplies">Pet Supplies & Accessories</a>
                                         <a className="dropdown-item" href="posters">Posters</a>
                                         <a className="dropdown-item" href="stationary">Stationary Products</a>
-                                        <a className="dropdown-item" href="stickers_patches">Stickers / Patches</a>
+                                        <a className="dropdown-item" href="stickersPatches">Stickers / Patches</a>
                                         <a className="dropdown-item" href="tickets">Tickets / Stubs</a>
-                                        <a className="dropdown-item" href="tour_books">Tour Books</a>
-                                        <a className="dropdown-item" href="trading_post_cards">Trading Cards Phone & Post Cards</a>
+                                        <a className="dropdown-item" href="tourBooks">Tour Books</a>
+                                        <a className="dropdown-item" href="tradingPostCards">Trading Cards Phone & Post Cards</a>
                                         <a className="dropdown-item" href="wine">Wine</a>
                                         <a className="dropdown-item" href="lighters">Zippos / Lighters</a>
                                     </div>

@@ -2,23 +2,26 @@ var mongoose = require('mongoose');
 
 // Create User Schema
 var itemSchema = mongoose.Schema({
-  item_name: {
+  itemName: {
     type: String,
     required: true
   },
-  item_manufacturer: {
+  itemManufacturer: {
     type: String
+  },
+  year: {
+    type: Number
   },
   description: {
     type: String
   },
-  item_value: {
+  itemValue: {
     type: Number
   },
   category: {
       type: String
   },
-  created_on: {
+  createdOn: {
     type: Date,
     default: Date.now
   }

@@ -25,6 +25,9 @@ MongoClient.connect(uri, function(err, client) {
 
 // ************************************
 
+// Connect to the Mongo DB
+mongoose.connect(process.env.MONGO_URI);
+
 // Use mongojs to hook the database to the db variable
 // var db = mongojs(uri, collections);
 
