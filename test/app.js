@@ -17,3 +17,18 @@ var db = mongoose.connect(process.env.MONGO_URI);
 //    client.close();
 // });
 
+
+/* Mongoose schema and model already created in Models! */
+
+/* Need to be able to grab something from state on front end to pull back here and use to communicate with db */
+
+//CREATE
+
+//READ
+
+//UPDATE
+
+//DELETE
+
+
+
