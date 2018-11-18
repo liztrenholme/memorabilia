@@ -6,8 +6,7 @@ import Featured from '../components/featured';
 import Customers from '../components/customers';
 import Search from '../components/search';
 import Admin from '../components/admin';
-// import Auth from './login';
-import Login from '../components/adminLogin';
+import adminLogin from '../components/adminLogin';
 import Register from '../components/register';
 
 export default () => (
@@ -20,7 +19,7 @@ export default () => (
                 <Route path="/customers" exact component={Customers} />
                 <Route path="?" component={Search} />
                 <Route path="/admin" component={Admin} />
-                <Route path='/login' component={Login} />
+                <Route path='/login' component={adminLogin} />
                 <Route path='/register' component={Register} />
             </Switch>
         </BrowserRouter>
