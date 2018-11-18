@@ -26,6 +26,16 @@ var db = mongoose.connect(process.env.MONGO_URI);
 
 //READ
 
+var findItemByName = function(itemName, done) {
+   Item.find( {name: itemName}, (err, data) => {
+     if (err) {
+      done(err);
+    }
+     done(null, data);
+   })
+ 
+ };
+
 //UPDATE
 
 //DELETE
