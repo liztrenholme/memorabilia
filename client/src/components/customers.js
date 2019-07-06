@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
-import './mem.css';
+import React, { Component } from 'react'
+import './mem.css'
 
 class Customers extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
       animals: []
-    };
+    }
   }
 
   componentDidMount() {
     fetch('/name')
       .then(res => res.json())
-      .then(animals => this.setState({animals}, () => console.log('Customers fetched...', animals)));
+      .then(animals => this.setState({animals}, () => console.log('Customers fetched...', animals)))
   }
 
   render() {
@@ -29,8 +29,8 @@ class Customers extends Component {
           </tbody>
         </table>
       </div>
-    );
+    )
   }
 }
 
-export default Customers;
+export default Customers

@@ -1,36 +1,36 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
+import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 class Create extends Component {
 
   constructor() {
-    super();
+    super()
     this.state = {
       username: '',
       password: ''
-    };
+    }
   }
   onChange = (e) => {
     const state = this.state
-    state[e.target.name] = e.target.value;
-    this.setState(state);
+    state[e.target.name] = e.target.value
+    this.setState(state)
   }
 
   onSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    const { username, password } = this.state;
+    const { username, password } = this.state
 
     axios.post('/api/auth/register', { username, password })
       .then((result) => {
-        this.props.history.push("/login")
-      });
+        this.props.history.push('/login')
+      })
   }
 
   render() {
-    const { username, password } = this.state;
+    const { username, password } = this.state
     return (
       <div className="container">
         <form className="authform" onSubmit={this.onSubmit}>
@@ -46,8 +46,8 @@ class Create extends Component {
           <button className="btn btn-outline-secondary" type="submit">Register</button>
         </form>
       </div>
-    );
+    )
   }
 }
 
-export default Create;
+export default Create

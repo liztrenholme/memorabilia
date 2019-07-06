@@ -17,7 +17,7 @@ export default () => (
                 <Route path="/contact" exact component={Contact} />
                 <Route path="/" exact component={Featured} />
                 <Route path="/customers" exact component={Customers} />
-                <Route path="?" component={Search} />
+                {/* <Route path="?" component={Search} /> */}
                 <Route path="/admin" component={Admin} />
                 <Route path='/login' component={adminLogin} />
                 <Route path='/register' component={Register} />

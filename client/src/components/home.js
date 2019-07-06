@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import './mem.css';
+import React, { Component } from 'react'
+import './mem.css'
 
 class Home extends Component {
   
 }
 
-export default Home;
+export default Home

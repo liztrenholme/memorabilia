@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import './mem.css';
+import React, { Component } from 'react'
+import './mem.css'
 
 class Featured extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
       featured: []
-    };
+    }
   }
 
   // componentDidMount() {
@@ -49,8 +49,8 @@ class Featured extends Component {
         </div>
         </div>
 
-        );
+        )
       }
     }
     
-export default Featured;
+export default Featured

@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
-import './mem.css';
+import React, { Component } from 'react'
+import './mem.css'
 
 class Hi extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
       hi: []
-    };
+    }
   }
 
   componentDidMount() {
     fetch('/api/hi')
       .then(res => res.json())
-      .then(hi => this.setState({hi}, () => console.log('Hellos fetched...', hi)));
+      .then(hi => this.setState({hi}, () => console.log('Hellos fetched...', hi)))
   }
 
   render() {
@@ -25,8 +25,8 @@ class Hi extends Component {
         )}
         </ul>
       </div>
-    );
+    )
   }
 }
 
-export default Hi;
+export default Hi

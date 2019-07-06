@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import '../App.css';
+import React, { Component } from 'react'
+import '../App.css'
 
 class Contact extends Component {
   render() {
@@ -23,8 +23,8 @@ class Contact extends Component {
               </div>
             </div>
           </div>
-    );
+    )
   }
 }
 
-export default Contact;
+export default Contact

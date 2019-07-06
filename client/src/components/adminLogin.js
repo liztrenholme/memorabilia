@@ -1,44 +1,45 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react'
+// import ReactDOM from 'react-dom';
+import axios from 'axios'
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 class adminLogin extends Component {
 
   constructor() {
-    super();
+    super()
     this.state = {
       username: '',
       password: '',
       message: ''
-    };
+    }
   }
   onChange = (e) => {
     const state = this.state
-    state[e.target.name] = e.target.value;
-    this.setState(state);
+    state[e.target.name] = e.target.value
+    this.setState(state)
   }
 
   onSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    const { username, password } = this.state;
+    const { username, password } = this.state
 
     axios.post('api/login', { username, password })
       .then((result) => {
-        localStorage.setItem('jwtToken', result.data.token);
-        this.setState({ message: '' });
+        localStorage.setItem('jwtToken', result.data.token)
+        this.setState({ message: '' })
         this.props.history.push('/')
       })
       .catch((error) => {
         if(error.response.status === 401) {
-          this.setState({ message: 'Login failed. Username or password not match' });
+          this.setState({ message: 'Login failed. Username or password not match' })
         }
-      });
+      })
   }
 
   render() {
-    const { username, password, message } = this.state;
+    const { username, password, message } = this.state
     return (
       <div className="container">
         <form className="authform" onSubmit={this.onSubmit}>
@@ -67,8 +68,12 @@ class adminLogin extends Component {
           <input className="btn btn-outline-secondary btn-default" type="submit" />
         </form> */}
       </div>
-    );
+    )
   }
 }
 
-export default adminLogin;
+adminLogin.PropTypes = {
+  history: PropTypes.object
+}
+
+export default adminLogin

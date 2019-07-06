@@ -1,25 +1,25 @@
-import React, { Component } from 'react';
-import './App.css';
-import Logo from './images/logo.jpg';
-import Tumblr from "./images/tumblr.png";
-import Twitter from "./images/twitter-48.png";
-import Blogger from "./images/blogger-5-48.png";
-import HeaderImg from "./images/header.jpg";
-import Routes from './routes';
+import React, { Component } from 'react'
+import './App.css'
+import Logo from './images/logo.jpg'
+import Tumblr from './images/tumblr.png'
+import Twitter from './images/twitter-48.png'
+import Blogger from './images/blogger-5-48.png'
+import HeaderImg from './images/header.jpg'
+import Routes from './routes'
 class App extends Component {
     constructor() {
-        super();
+        super()
         this.state = {
             value: '',
             results: []
         }
     }
     onChange(e) {
-        this.setState({ value: e.target.value });
-        console.log(this.state.value);
+        this.setState({ value: e.target.value })
+        console.log(this.state.value)
     }
     render() {
-        const { results, value } = this.state;
+        const { results, value } = this.state
         return (
             <div className="App">
                 <div className="container-fluid">
@@ -126,8 +126,8 @@ class App extends Component {
                 <footer>&#9400; 2007-2018 Kollecting KISS | All rights reserved.</footer>   
                 <footer><a className="light" href="/admin">[Admin]</a></footer>
             </div>
-        );
+        )
     }
 }
 
-export default App;
+export default App

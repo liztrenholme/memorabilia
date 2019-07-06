@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import axios from "axios";
+// import axios from "axios";
 
 
 class Admin extends Component {
@@ -22,7 +22,7 @@ class Admin extends Component {
     }
 
     componentDidMount() {
-        axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
+        // axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
         // axios.get('/api/book')
         //   .then(res => {
         // this.setState({ books: res.data });
@@ -33,6 +33,26 @@ class Admin extends Component {
         //       this.props.history.push("/login");
         //     }
         //   });
+        const {
+            Stitch,
+            RemoteMongoClient,
+            AnonymousCredential
+        } = require('mongodb-stitch-browser-sdk');
+        
+        const client = Stitch.initializeDefaultAppClient('kollecting-kiss-qctxo');
+        
+        const db = client.getServiceClient(RemoteMongoClient.factory, 'mongodb-atlas').db('memorabilia');
+        
+        client.auth.loginWithCredential(new AnonymousCredential()).then(user =>
+          db.collection('items').updateOne({owner_id: client.auth.user.id}, {$set:{number:42}}, {upsert:true})
+        ).then(() =>
+          db.collection('items').find({owner_id: client.auth.user.id}, { limit: 100}).asArray()
+        ).then(docs => {
+            console.log("Found docs", docs)
+            console.log("[MongoDB Stitch] Connected to Stitch")
+        }).catch(err => {
+            console.error(err)
+        });
     }
 
 
